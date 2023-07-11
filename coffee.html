@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta cost="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Phê Coffee - Cà phê</title>
+    <link
+      rel="shortcut icon"
+      href="assets/images/phe_logo.png"
+      type="image/x-icon"
+    />
+    <link rel="stylesheet" href="assets/css/coffee.css" />
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <script src="./assets/js/cf_data.js"></script>
+    <script src="./assets/js/shopping-cart.js"></script>
+  </head>
+  <body>
+    <!-- Header -->
+    <div class="header">
+      <a href="./index.html">
+        <img
+          src="./assets/images/phe_logo.png"
+          alt="logo"
+          class="header__img-logo"
+        />
+      </a>
+      <div class="navbar">
+        <ul class="header__nav-list">
+          <li class="header__nav-items">
+            <a href="/phecoffee.html" class="header__nav-links">TRANG CHỦ</a>
+          </li>
+          <li class="header__nav-items">
+            <a href="/product.html" class="header__nav-links">THỰC ĐƠN</a>
+            <div class="menu__child">
+              <div class="menu__child-item">
+                <h4><a href="/product.html">CÀ PHÊ</a></h4>
+                <ul class="menu__child-list">
+                  <li>
+                    <a href="/coffee.html" class="menu__child-link"
+                      >Cà Phê Phin</a
+                    >
+                  </li>
+                  <li>
+                    <a href="/coffee.html" class="menu__child-link">PhinDi</a>
+                  </li>
+                  <li>
+                    <a href="/coffee.html" class="menu__child-link"
+                      >Cà Phê Espresso</a
+                    >
+                  </li>
+                </ul>
+              </div>
+              <div class="menu__child-item">
+                <h4><a href="/product.html">FREEZE</a></h4>
+                <ul class="menu__child-list">
+                  <li>
+                    <a href="/freeze.html" class="menu__child-link"
+                      >Freeze Cà Phê Phin</a
+                    >
+                  </li>
+                  <li>
+                    <a href="/freeze.html" class="menu__child-link"
+                      >Freeze Không Cà Phê</a
+                    >
+                  </li>
+                </ul>
+              </div>
+              <div class="menu__child-item">
+                <h4><a href="/product.html">TRÀ</a></h4>
+                <ul class="menu__child-list">
+                  <li>
+                    <a href="/tea.html" class="menu__child-link"
+                      >Trà Sen Vàng</a
+                    >
+                  </li>
+                  <li>
+                    <a href="/tea.html" class="menu__child-link"
+                      >Trà Thạch Đào</a
+                    >
+                  </li>
+                  <li>
+                    <a href="/tea.html" class="menu__child-link"
+                      >Trà Thanh Đào</a
+                    >
+                  </li>
+                  <li>
+                    <a href="/tea.html" class="menu__child-link"
+                      >Trà Thạch Vải</a
+                    >
+                  </li>
+                  <li>
+                    <a href="/tea.html" class="menu__child-link"
+                      >Trà Nhiệt Đới</a
+                    >
+                  </li>
+                </ul>
+              </div>
+              <div class="menu__child-item">
+                <h4><a href="/product.html">KHÁC</a></h4>
+                <ul class="menu__child-list">
+                  <li>Bánh Ngọt</li>
+                  <li>Merchandise</li>
+                  <li>Cà Phê Đóng Gói</li>
+                  <li>Thực Đơn Giao Hàng</li>
+                </ul>
+              </div>
+            </div>
+          </li>
+          <li class="header__nav-items">
+            <a href="#" class="header__nav-links">TIN TỨC</a>
+          </li>
+          <li class="header__nav-items">
+            <a href="#" class="header__nav-links">CỘNG ĐỒNG</a>
+          </li>
+          <li class="header__nav-items">
+            <a href="./aboutus.html" class="header__nav-links">VỀ CHÚNG TÔI</a>
+            <div class="menu__childs">
+              <div class="menu__child-items">
+                <h4><a href="./aboutus.html">NGUỒN GỐC</a></h4>
+              </div>
+              <div class="menu__child-items">
+                <h4><a href="./aboutus.html">DỊCH VỤ</a></h4>
+              </div>
+              <div class="menu__child-items">
+                <h4><a href="./aboutus.html">NGHỀ NGHIỆP</a></h4>
+              </div>
+            </div>
+          </li>
+          <li class="header__nav-items">
+            <a href="#" class="header__nav-links"
+              ><span id="cartItemCount">GIỎ HÀNG</span></a
+            >
+          </li>
+        </ul>
+      </div>
+      <div class="hamburger">
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+      </div>
+    </div>
+
+    <div class="container">
+      <h1>CÀ PHÊ</h1>
+    </div>
+
+    <!-- Loader -->
+    <div class="loader"></div>
+
+    <script>
+      // Lấy danh sách sản phẩm từ local storage
+      var productList = JSON.parse(localStorage.getItem("productList"));
+
+      // Kiểm tra nếu danh sách sản phẩm tồn tại
+      if (productList && productList.length > 0) {
+        var container = document.querySelector(".container");
+
+        // Tạo thẻ div chứa danh sách sản phẩm
+        var slideDiv = document.createElement("div");
+        slideDiv.id = "slide";
+
+        // Duyệt qua danh sách sản phẩm và tạo các thẻ div tương ứng
+        productList.forEach(function (product) {
+          var itemDiv = document.createElement("div");
+          itemDiv.className = "item";
+          itemDiv.style.backgroundImage = "url(" + product.image + ")";
+
+          var contentDiv = document.createElement("div");
+          contentDiv.className = "content";
+
+          var nameDiv = document.createElement("div");
+          nameDiv.className = "name";
+          nameDiv.textContent = product.name;
+
+          var costDiv = document.createElement("div");
+          costDiv.className = "cost";
+          costDiv.textContent = product.price;
+
+          var button = document.createElement("button");
+          var link = document.createElement("a");
+          link.href = "#";
+          link.textContent = "THÊM VÀO GIỎ HÀNG";
+          button.appendChild(link);
+
+          contentDiv.appendChild(nameDiv);
+          contentDiv.appendChild(costDiv);
+          contentDiv.appendChild(button);
+          itemDiv.appendChild(contentDiv);
+          slideDiv.appendChild(itemDiv);
+        });
+
+        container.appendChild(slideDiv);
+
+        // Thêm nút điều hướng
+        var buttonsDiv = document.createElement("div");
+        buttonsDiv.className = "buttons";
+
+        var prevButton = document.createElement("button");
+        prevButton.id = "prev";
+        var prevIcon = document.createElement("i");
+        prevIcon.className = "fa-solid fa-arrow-left";
+        prevButton.appendChild(prevIcon);
+
+        var nextButton = document.createElement("button");
+        nextButton.id = "next";
+        var nextIcon = document.createElement("i");
+        nextIcon.className = "fa-solid fa-arrow-right";
+        nextButton.appendChild(nextIcon);
+
+        buttonsDiv.appendChild(prevButton);
+        buttonsDiv.appendChild(nextButton);
+        container.appendChild(buttonsDiv);
+      }
+
+      // Lấy giỏ hàng từ local storage
+      var cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+      // Lấy danh sách nút "THÊM VÀO GIỎ HÀNG"
+      var addToCartButtons = document.querySelectorAll("button");
+
+      // Lặp qua danh sách nút và gắn sự kiện click
+      addToCartButtons.forEach(function (button, index) {
+        button.addEventListener("click", function (event) {
+          event.preventDefault();
+
+          // Lấy thông tin sản phẩm từ danh sách sản phẩm
+          var selectedProduct = productList[index];
+
+          // Kiểm tra xem sản phẩm đã tồn tại trong giỏ hàng hay chưa
+          var existingProduct = cart.find(function (item) {
+            return item.name === selectedProduct.name;
+          });
+
+          if (existingProduct) {
+            // Nếu sản phẩm đã tồn tại, tăng số lượng lên 1
+            existingProduct.quantity++;
+          } else {
+            // Nếu sản phẩm chưa tồn tại, thêm sản phẩm vào giỏ hàng
+            cart.push({
+              name: selectedProduct.name,
+              price: selectedProduct.price,
+              image: selectedProduct.image,
+              quantity: 0,
+            });
+          }
+
+          // Lưu giỏ hàng vào local storage
+          localStorage.setItem("cart", JSON.stringify(cart));
+
+          // Thông báo cho người dùng biết rằng sản phẩm đã được thêm vào giỏ hàng
+          alert("Sản phẩm đã được thêm vào giỏ hàng.");
+
+          // Optional: Cập nhật số lượng sản phẩm trong giỏ hàng trên giao diện người dùng (ví dụ: nút Giỏ hàng)
+          updateCartItemCount();
+        });
+      });
+
+      // Optional: Hàm cập nhật số lượng sản phẩm trong giỏ hàng trên giao diện người dùng (ví dụ: nút Giỏ hàng)
+      function updateCartItemCount() {
+        var cartCount = document.getElementById("cartItemCount");
+        if (cartCount) {
+          cartCount.textContent = cart.length.toString();
+        }
+      }
+    </script>
+
+    <script src="./assets/js/hamburger.js"></script>
+    <script src="/assets/js/slider.js"></script>
+    <script src="/assets/js/coffee.js"></script>
+    <script src="./assets/js/loading.js"></script>
+  </body>
+</html>
