@@ -1,31 +1,31 @@
 var productList = [
   {
-    name: "PHIN SỮA ĐÁ",
+    name: "Phin Sữa Đá",
     price: "29.000 VNĐ",
     image: "/assets/images/sp1.png",
   },
   {
-    name: "PHIN SỮA ĐÁ",
+    name: "Phin Sữa Đá",
     price: "29.000 VNĐ",
     image: "/assets/images/sp1.png",
   },
   {
-    name: "PHIN SỮA ĐÁ",
+    name: "Phin Sữa Đá",
     price: "29.000 VNĐ",
     image: "/assets/images/sp1.png",
   },
   {
-    name: "PHIN SỮA ĐÁ",
+    name: "Phin Sữa Đá",
     price: "29.000 VNĐ",
     image: "/assets/images/sp1.png",
   },
   {
-    name: "PHIN SỮA ĐÁ",
+    name: "Phin Sữa Đá",
     price: "29.000 VNĐ",
     image: "/assets/images/sp1.png",
   },
   {
-    name: "PHIN SỮA ĐÁ",
+    name: "Phin Sữa Đá",
     price: "29.000 VNĐ",
     image: "/assets/images/sp1.png",
   },

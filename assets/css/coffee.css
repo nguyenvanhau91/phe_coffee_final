@@ -389,7 +389,7 @@ body {
 }
 
 .item {
-    width: 400px;
+    width: 350px;
     height: 280px;
     background-position: 50% 50%;
     display: inline-block;
@@ -399,6 +399,7 @@ body {
     z-index: 1;
 }
 
+
 .item:nth-child(1) {
     transform: translate(-150%);
     background-position: 0% 50%;
@@ -406,17 +407,17 @@ body {
 }
 
 .item:nth-child(2) {
-    transform: translate(-50%);
+    transform: translate(-33%);
     background-position: 20% 50%;
 }
 
 .item:nth-child(3) {
-    transform: translate(60%);
+    transform: translate(78%);
     background-position: 50% 50%;
 }
 
 .item:nth-child(4) {
-    transform: translate(170%);
+    transform: translate(190%);
     background-position: 80% 50%;
 }
 

@@ -376,7 +376,7 @@ body {
 /* ITEM 1 */
 .item-1 {
     width: 100%;
-    background-image: linear-gradient(rgba(255, 175, 64, 0.7), rgba(0,0,0,0.7)), url(/assets/images/bg4.avif);
+    background-image: linear-gradient(rgba(255, 175, 64, 0.7), rgba(0,0,0,0.7)), url(/assets/images/bg2.jpg);
     background-size: cover;
 }
 
@@ -398,7 +398,7 @@ body {
 }
 
 .content-1 p {
-    width: 80%;
+    width: 50%;
 }
 
 .image-1 {
@@ -406,8 +406,8 @@ body {
     top: 3%;
     right: 0%;
     transform: translate(50%, -20%);
-    width: 25%;
-    height: 25%;
+    width: 270px;
+    height: 350px;
     background-image: url("/assets/images/sp1.png");
     background-size: contain;
     background-repeat: no-repeat;
@@ -417,7 +417,7 @@ body {
 /* ITEM 2 */
 .item-2 {
     width: 100%;
-    background-image: linear-gradient(rgba(64, 255, 153, 0.7), rgba(0,0,0,0.7)), url(/assets/images/bg4.avif);
+    background-image: linear-gradient(rgba(64, 255, 153, 0.7), rgba(0,0,0,0.7)), url(/assets/images/bg2.jpg);
     background-size: cover;
 }
 
@@ -439,7 +439,7 @@ body {
 }
 
 .content-2 p {
-    width: 80%;
+    width: 50%;
 }
 
 .image-2 {
@@ -447,8 +447,8 @@ body {
     top: 38%;
     right: 0%;
     transform: translate(50%, -20%);
-    width: 25%;
-    height: 25%;
+    width: 270px;
+    height: 350px;
     background-image: url("/assets/images/sp2.png");
     background-size: contain;
     background-repeat: no-repeat;
@@ -458,7 +458,7 @@ body {
 /* ITEM 3 */
 .item-3 {
     width: 100%;
-    background-image: linear-gradient(rgba(255, 90, 90, 0.7), rgba(0,0,0,0.7)), url(/assets/images/bg4.avif);
+    background-image: linear-gradient(rgba(255, 90, 90, 0.7), rgba(0,0,0,0.7)), url(/assets/images/bg2.jpg);
     background-size: cover;
 }
 
@@ -480,7 +480,7 @@ body {
 }
 
 .content-3 p {
-    width: 80%;
+    width: 50%;
 }
 
 .image-3 {
@@ -488,8 +488,8 @@ body {
     top: 70%;
     right: 0%;
     transform: translate(50%, -20%);
-    width: 25%;
-    height: 25%;
+    width: 270px;
+    height: 350px;
     background-image: url("/assets/images/sp3.png");
     background-size: contain;
     background-repeat: no-repeat;
@@ -550,6 +550,7 @@ body {
 
 /* FOOTER */
 .footer {
+    margin-top: 40px;
     height: 210px;
     background-color: var(--secondary-color);
     transform: translateY(-40px);

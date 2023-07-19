@@ -364,201 +364,79 @@ body {
 }
 
 
-/* CONTAINER */
-.container {
-    position: absolute;
-    margin-top: 40px;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 1000px;
-    height: 600px;
-    padding: 50px;
-    background-color: #f5f5f5;
-    box-shadow: 0 30px 50px #bdbdbd;
+/* CART CONTAINER */
+.cart-container {
+    max-width: 800px;
+    margin: 0 auto;
+    margin-top: 100px;
+    padding: 20px;
 }
 
-.container h1 {
+h2 {
     text-align: center;
-    color: green;
-}
-
-#slide {
-    width: max-content;
-    margin-top: 50px;
-}
-
-.item {
-    width: 350px;
-    height: 280px;
-    background-position: 50% 50%;
-    display: inline-block;
-    transition: 1s;
-    background-size: 85%;
-    position: absolute;
-    z-index: 1;
-}
-
-
-.item:nth-child(1) {
-    transform: translate(-150%);
-    background-position: 0% 50%;
-    opacity: 0;
-}
-
-.item:nth-child(2) {
-    transform: translate(-33%);
-    background-position: 20% 50%;
-}
-
-.item:nth-child(3) {
-    transform: translate(78%);
-    background-position: 50% 50%;
-}
-
-.item:nth-child(4) {
-    transform: translate(190%);
-    background-position: 80% 50%;
-}
-
-.item:nth-child(n+5) {
-    transform: translate(290%);
-    background-position: 100% 50%;
-    opacity: 0;
-}
-
-.item .content {
-    position: absolute;
-    top: 100%;
-    background-color: var(--first-color);
-    width: 100%;
-    padding: 0 20px;
-    text-align: center;
-    box-shadow: 0 30px 50px #b9b9b9;
-    transition: 0.5s;
-    overflow: hidden;
-    max-height: 0;
-}
-
-.item .content .name {
-    font-size: 23px;
+    padding: 20px 0;
+    font-weight: normal;
     color: var(--secondary-color);
 }
 
-.item .content .cost {
-    font-size: 23px;
-    color: var(--third-color);
-}
-
-.item .content button {
-    padding: 10px;
-    border: none;
-    background-color: green;
-}
-
-.item .content button a {
-    color: var(--first-color);
-}
-
-.item .content button a:hover {
-    color: chartreuse;
-    transition: 0.25s linear;
-}
-
-.item:hover .content {
-    max-height: 150px;
-}
-
-.item:hover {
-    background-size: 100%;
-}
-
-.buttons {
-    position: absolute;
-    bottom: 30px;
-    left: 0;
-    text-align: center;
+table {
     width: 100%;
-}
-
-.buttons button {
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    border: 1px solid #555;
-    transition: 0.5s;
-    margin-left: 5px;
-    margin-right: 5px;
-}
-
-.buttons button:hover {
-    color: var(--first-color);
-    background-color: green;
-}
-
-/* FOOTER */
-.footer {
-    height: 210px;
-    background-color: var(--secondary-color);
-    transform: translateY(-40px);
-    padding: 16px;
-}
-
-.footer-content {
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-}
-
-.footer-column {
-    flex-basis: 30%;
+    border-collapse: collapse;
     margin-bottom: 20px;
 }
 
-.footer-column p {
-    color: var(--first-color);
-    font-weight: 300;
-    font-size: 14px;
-}
-
-span {
-    color: var(--third-color);
-}
-
-.footer h3 {
-    margin-bottom: 10px;
-    color: var(--third-color);
-}
-
-.social-icons .fa-facebook-f {
-    background-color: var(--third-color);
-    color: var(--secondary-color);
-    padding: 5px 10px;
-    margin-right: 10px;
-}
-
-.social-icons .fa-youtube {
-    background-color: var(--third-color);
-    color: var(--secondary-color);
-    padding: 5px 6px;
-    margin-right: 10px;
-}
-
-.social-icons .fa-instagram {
-    background-color: var(--third-color);
-    color: var(--secondary-color);
-    padding: 5px 8px;
-    margin-right: 10px;
-}
-
-.footer-bottom {
-    margin-top: 20px;
+th,
+td {
+    padding: 10px;
     text-align: center;
+    border-bottom: 1px solid var(--secondary-color);
+    color: var(--secondary-color);
 }
 
-.footer-bottom p {
-    font-size: 14px;
-    color: var(--third-color);
+td img {
+    width: 100px;
+}
+
+td input {
+    padding: 3px;
+    width: 50%;
+}
+
+td button {
+    padding: 5px 20px;
+    border: none;
+    border-radius: 10px;
+    background-color: #ac0000;
+    color: var(--first-color);
+    cursor: pointer;
+}
+
+th {
+    background-color: var(--third-color);
+}
+
+.buttons {
+    display: flex;
+}
+
+button[type="submit-1"] {
+    border: none;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: var(--secondary-color);
+    color: var(--first-color);
+    cursor: pointer;
+    margin: 0 auto;
+}
+
+button[type="submit-2"] {
+    border: none;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: var(--third-color);
+    color: var(--secondary-color);
+    cursor: pointer;
+    margin: 0 auto;
 }
 
 /* LOADER */
