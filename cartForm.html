@@ -155,10 +155,12 @@
         </table>
         <div class="buttons">
           <button type="submit-1">Cập nhật giỏ hàng</button>
-          <button type="submit-2">Mua hàng</button>
+          <button type="submit-2" id="buy-button">Mua hàng</button>
         </div>
       </form>
     </div>
+
+    <div id="payment-loader"></div>
 
     <!-- Loader -->
     <div class="loader"></div>
@@ -253,8 +255,50 @@
           alert("Giỏ hàng đã được cập nhật thành công!");
         });
 
+      // Function to simulate a server request (replace this with actual server-side code)
+      function simulateServerRequest() {
+        return new Promise((resolve) => {
+          // Simulating a 2-second server request delay
+          setTimeout(() => {
+            resolve();
+          }, 1500);
+        });
+      }
+
       // Hiển thị danh sách sản phẩm trong giỏ hàng khi trang được tải
       displayCartItems();
+
+      // Xử lý khi nhấn vào button "Mua hàng"
+      document.getElementById("buy-button").addEventListener("click", async function (event) {
+        event.preventDefault();
+        // Kiểm tra giỏ hàng có sản phẩm hay không
+        if (cart.length === 0) {
+          alert("Giỏ hàng của bạn đang trống. Vui lòng thêm sản phẩm vào giỏ hàng trước khi mua hàng.");
+          return;
+        }
+
+        // Hiển thị loading indicator khi đang xử lý thanh toán
+        var paymentLoader = document.getElementById("payment-loader");
+        paymentLoader.style.display = "block";
+
+        try {
+          // Simulate server request
+          await simulateServerRequest();
+
+          // Giả lập thanh toán thành công, có thể tích hợp với cổng thanh toán thật ở đây
+          alert("Thanh toán thành công! Cảm ơn bạn đã mua hàng.");
+
+          // Làm rỗng giỏ hàng sau khi thanh toán thành công
+          cart = [];
+          saveCartToLocalStorage();
+          displayCartItems();
+        } catch (error) {
+          alert("Đã xảy ra lỗi trong quá trình thanh toán. Vui lòng thử lại sau.");
+        } finally {
+          // Ẩn loading indicator khi hoàn tất thanh toán (được sử dụng trong cả thành công và lỗi)
+          paymentLoader.style.display = "none";
+        }
+      });
     </script>
 
     <script src="./assets/js/hamburger.js"></script>
